@@ -2,25 +2,25 @@ import { pool } from './database.js';
 
 const featureData = {
     "Exterior": [
-        { name: "Polar White", price: 0, image: '../src/assets/car-white.png', color: '#FFFFFF' },
-        { name: "Obsidian Black", price: 500, image: '../src/assets/car-black.png', color: '#000000' },
-        { name: "Velocity Red", price: 750, image: '../src/assets/car-red.png', color: '#FF0000' },
-        { name: "Starlight Blue", price: 750, image: '../src/assets/car-blue.png', color: '#005A9C' },
+        { name: "Polar White", price: 0, image: '/images/car-white.png', color: '#FFFFFF' },
+        { name: "Obsidian Black", price: 500, image: '/images/car-black.png', color: '#000000' },
+        { name: "Velocity Red", price: 750, image: '/images/car-red.png', color: '#FF0000' },
+        { name: "Starlight Blue", price: 750, image: '/images/car-blue.png', color: '#005A9C' },
     ],
     "Roof": [
-        { name: "Standard Roof", price: 0, image: '../src/assets/roof-standard.png' },
-        { name: "Panoramic Sunroof", price: 1200, image: '../src/assets/roof-pano.png' },
-        { name: "Convertible Soft Top", price: 2500, image: '../src/assets/roof-convertible.png' },
+        { name: "Standard Roof", price: 0, image: '/images/roof-standard.png' },
+        { name: "Panoramic Sunroof", price: 1200, image: '/images/roof-pano.png' },
+        { name: "Convertible Soft Top", price: 2500, image: '/images/roof-convertible.png' },
     ],
     "Wheels": [
-        { name: "18-inch Aero", price: 0, image: '../src/assets/wheels-aero.png'  },
-        { name: "19-inch Sport", price: 800, image: '../src/assets/wheels-sport.png' },
-        { name: "20-inch Performance", price: 1500, image: '../src/assets/wheels-performance.png' },
+        { name: "18-inch Aero", price: 0, image: '/images/wheels-aero.png'  },
+        { name: "19-inch Sport", price: 800, image: '/images/wheels-sport.png' },
+        { name: "20-inch Performance", price: 1500, image: '/images/wheels-performance.png' },
     ],
     "Interior": [
-        { name: "Black Synthetic", price: 0, image: '../src/assets/interior-black.png'  },
-        { name: "White Premium", price: 1000, image: '../src/assets/interior-white.png' },
-        { name: "Red Accent", price: 1250, image: '../src/assets/interior-red.png' },
+        { name: "Black Synthetic", price: 0, image: '/images/interior-black.png'  },
+        { name: "White Premium", price: 1000, image: '/images//interior-white.png' },
+        { name: "Red Accent", price: 1250, image: '/images/interior-red.png' },
     ]
 };
 

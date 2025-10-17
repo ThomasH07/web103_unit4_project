@@ -33,9 +33,8 @@ const CreateCar = () => {
     }, []);
 
     const handleOptionChange = (featureId, option) => {
-        // 🔹 Check if trying to select panoramic roof while not convertible
-        if (!isConvertible && option.name.toLowerCase().includes('panoramic sunroof')) {
-            alert("Can't choose the Panoramic Roof unless the car is convertible!");
+        if (!isConvertible && option.name.toLowerCase().includes('convertible soft top')) {
+            alert("Can't choose the Convertible Soft Top unless the car is convertible!");
             return;
         }
 

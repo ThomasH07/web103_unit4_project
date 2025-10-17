@@ -23,11 +23,11 @@ const CarDetails = () => {
     }, [id]);
 
     const calculateTotalPrice = (options) => {
-        if (!Array.isArray(options)) {
-            return 0;
-        }
-        return options.reduce((total, option) => total + (option.price_in_cents || 0), 0) / 100;
-    };
+        if (!Array.isArray(options)) return 0;
+      
+        const totalCents = options.reduce((sum, option) => sum + (option.price_in_cents || 0), 0);
+        return totalCents / 100;
+      };
 
     if (loading) return <div className="loading-message">Loading Car Details...</div>;
     if (error) return <div className="error-message">{error}</div>;

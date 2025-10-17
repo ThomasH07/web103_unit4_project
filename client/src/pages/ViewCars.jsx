@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import  { getAllCars, deleteCar} from '../services/CarsAPI.jsx';
 import '../App.css'
 const calculateTotalPrice = (options) => {
-    return options.reduce((total, option) => total + option.price_in_cents, 0) / 100;
-};
+    if (!Array.isArray(options)) return 0;
+  
+    const totalCents = options.reduce((sum, option) => sum + (option.price_in_cents || 0), 0);
+    return totalCents / 100;
+  };
 
 const ViewAllCars = () => {
     const [cars, setCars] = useState([]);
