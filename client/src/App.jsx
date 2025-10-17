@@ -14,17 +14,17 @@ const App = () => {
       element: <CreateCar title='BOLT BUCKET | Customize' />
     },
     {
-      path:'/customcars',
+      path:'/cars',
       element: <ViewCars title='BOLT BUCKET | Custom Cars' />
     },
     {
-      path: '/customcars/:id',
-      element: <CarDetails title='BOLT BUCKET | View' />
+      path: "/cars/:id", 
+      element: <CarDetails title='BOLT BUCKET | Car' />
     },
     {
-      path: '/edit/:id',
-      element: <EditCar title='BOLT BUCKET | Edit' />
-    }
+      path: "/cars/:id/edit",
+      element: <EditCar title='BOLT BUCKET | EditCar' />
+    },
   ])
 
   return (

@@ -1,68 +1,216 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* === Dark Theme with Red Accents === */
+/*not going to lie, i just kept on adding and got really confused with this css file*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
-#root {
-    --font-family: Rubik, Verdana, sans-serif;
-    --primary: rgb(115, 2, 12);
-    --primary-hover: black;
-    --color: white;
-    --h1-color: var(--color);
-    --h2-color: var(--color);
-    --h3-color: var(--color);
-    --card-background-color: rgba(0, 0, 0, 0.8);
-    --card-sectionning-background-color: rgba(0, 0, 0, 0.8);
-    --form-element-active-border-color: var(--color);
-    --form-element-placeholder-color: gray;
+:root {
+    --font-family: 'Rubik', Verdana, sans-serif;
+    --primary: rgb(180, 2, 12);
+    --primary-hover: rgb(220, 3, 15);
+    --text-light: #f0f0f0;
+    --text-medium: #a0a0a0;
+    --background-dark: #121212;
+    --card-background: #1e1e1e;
+    --card-section: #2a2a2a;
+    --border-color: #3a3a3a;
+    --danger: #e74c3c;
+    --danger-hover: #c0392b;
 }
 
-#root h1 {
-    font-size: 3rem;
-    margin-bottom: 0px;
-}
-
-#root h2 {
-    margin-bottom: 0px;
-}
-
-#root h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0px;
-}
-
-#root p {
-    margin-bottom: 10px;
-}
-
-#root [role=button], #root button, #root input[type=submit] {
+body {
     font-family: var(--font-family);
-    font-weight: 500;
-    text-transform: uppercase;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+h1 { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
+h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 1.5rem; }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+.btn {
+    font-family: var(--font-family);
+    display: inline-block;
+    padding: 12px 24px;
     border: 2px solid transparent;
-    margin: 10px;
-    width: max-content;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
 }
 
-#root [role=button]:hover, #root button:hover, #root input[type=submit]:hover {
-    border: 2px solid var(--color);
+.btn + .btn, .car-card-actions a + a, .car-card-actions a + button {
+    margin-left: 0.75rem;
 }
 
-#root main {
+.btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-danger-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--danger);
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-danger-link:hover {
+    text-decoration: underline;
+    color: var(--danger-hover);
+}
+
+
+.form-container {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-medium);
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c2c2c;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(180, 2, 12, 0.3);
+}
+
+.option-label {
     display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.option-label:hover { border-color: var(--text-medium); }
+.option-label input[type="radio"] { margin-right: 10px; }
+.option-label.checked {
+    border-color: var(--primary);
+    color: var(--text-light);
+    font-weight: 500;
 }
 
-#root article {
-    text-align: left;
-    margin-bottom: 5px;
+.garage-header { text-align: center; margin-bottom: 2rem; }
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
-
-#root article header {
-    border-bottom: 0px;
-    margin-bottom: 10px;
-}
-
-#root article footer {
-    border-top: 0px;
-    margin-top: 0px;
+.car-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}
+.car-card-content { padding: 1.5rem; flex-grow: 1; }
+.car-card ul { list-style: none; padding: 0; margin: 1rem 0; color: var(--text-medium); }
+.car-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--card-section);
+    border-top: 1px solid var(--border-color);
+}
+
+.car-details-container {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+.car-details-container ul { list-style: none; padding-left: 0; }
+.car-details-container li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.car-details-container li:last-child { border-bottom: none; }
+
+.loading-message, .error-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-medium);
+}
+
+.error-message {
+    color: #ff8a80;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid var(--danger);
+    border-radius: 8px;
+}
+
+img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover;
 }
